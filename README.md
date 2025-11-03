@@ -30,18 +30,21 @@
 <td width="33%">
 
 ### **Autonomous Discovery**
+
 LLMs don't just optimize—they **discover** entirely new algorithms. No human guidance needed.
 
 </td>
 <td width="33%">
 
 ### **Proven Results**
+
 **2-3x speedups** on real hardware. **State-of-the-art** circle packing. **Breakthrough** optimizations.
 
 </td>
 <td width="33%">
 
 ### **Research Grade**
+
 Full reproducibility, extensive evaluation pipelines, and scientific rigor built-in.
 
 </td>
@@ -50,25 +53,25 @@ Full reproducibility, extensive evaluation pipelines, and scientific rigor built
 
 **OpenEvolve vs Manual Optimization:**
 
-| Aspect | Manual Optimization | OpenEvolve |
-|--------|-------------------|------------|
-| **Time to Solution** | Days to weeks | Hours |
-| **Exploration Breadth** | Limited by human creativity | Unlimited LLM creativity |
-| **Reproducibility** | Hard to replicate | Fully deterministic |
-| **Multi-objective** | Complex tradeoffs | Automatic Pareto optimization |
-| **Scaling** | Doesn't scale | Parallel evolution across islands |
+| Aspect                  | Manual Optimization         | OpenEvolve                        |
+| ----------------------- | --------------------------- | --------------------------------- |
+| **Time to Solution**    | Days to weeks               | Hours                             |
+| **Exploration Breadth** | Limited by human creativity | Unlimited LLM creativity          |
+| **Reproducibility**     | Hard to replicate           | Fully deterministic               |
+| **Multi-objective**     | Complex tradeoffs           | Automatic Pareto optimization     |
+| **Scaling**             | Doesn't scale               | Parallel evolution across islands |
 
 ## Proven Achievements
 
 <div align="center">
 
-| **Domain** | **Achievement** | **Example** |
-|---------------|-------------------|----------------|
-| **GPU Optimization** | Hardware-optimized kernel discovery | [MLX Metal Kernels](examples/mlx_metal_kernel_opt/) |
-| **Mathematical** | State-of-the-art circle packing (n=26) | [Circle Packing](examples/circle_packing/) |
-| **Algorithm Design** | Adaptive sorting algorithms | [Rust Adaptive Sort](examples/rust_adaptive_sort/) |
-| **Scientific Computing** | Automated filter design | [Signal Processing](examples/signal_processing/) |
-| **Multi-Language** | Python, Rust, R, Metal shaders | [All Examples](examples/) |
+| **Domain**               | **Achievement**                        | **Example**                                         |
+| ------------------------ | -------------------------------------- | --------------------------------------------------- |
+| **GPU Optimization**     | Hardware-optimized kernel discovery    | [MLX Metal Kernels](examples/mlx_metal_kernel_opt/) |
+| **Mathematical**         | State-of-the-art circle packing (n=26) | [Circle Packing](examples/circle_packing/)          |
+| **Algorithm Design**     | Adaptive sorting algorithms            | [Rust Adaptive Sort](examples/rust_adaptive_sort/)  |
+| **Scientific Computing** | Automated filter design                | [Signal Processing](examples/signal_processing/)    |
+| **Multi-Language**       | Python, Rust, R, Metal shaders         | [All Examples](examples/)                           |
 
 </div>
 
@@ -136,10 +139,10 @@ print(f"Evolved sorting algorithm: {result.best_code}")
 
 **Watch OpenEvolve discover optimal circle packing in real-time:**
 
-| Generation 1 | Generation 190 | Generation 460 (Final) |
-|--------------|----------------|----------------------|
+| Generation 1                                             | Generation 190                                              | Generation 460 (Final)                                   |
+| -------------------------------------------------------- | ----------------------------------------------------------- | -------------------------------------------------------- |
 | ![Initial](examples/circle_packing/circle_packing_1.png) | ![Progress](examples/circle_packing/circle_packing_190.png) | ![Final](examples/circle_packing/circle_packing_460.png) |
-| Random placement | Learning structure | **State-of-the-art result** |
+| Random placement                                         | Learning structure                                          | **State-of-the-art result**                              |
 
 **Result**: Matches published benchmarks for n=26 circle packing problem.
 
@@ -149,6 +152,7 @@ print(f"Evolved sorting algorithm: {result.best_code}")
 <summary><b>GPU Kernel Evolution</b></summary>
 
 **Before (Baseline)**:
+
 ```metal
 // Standard attention implementation
 kernel void attention_baseline(/* ... */) {
@@ -161,6 +165,7 @@ kernel void attention_baseline(/* ... */) {
 ```
 
 **After Evolution (2.8x faster)**:
+
 ```metal
 // OpenEvolve discovered optimization
 kernel void attention_evolved(/* ... */) {
@@ -221,18 +226,19 @@ OpenEvolve implements a sophisticated **evolutionary coding pipeline** that goes
 
 ## Perfect For
 
-| **Use Case** | **Why OpenEvolve Excels** |
-|--------------|---------------------------|
+| **Use Case**                 | **Why OpenEvolve Excels**                             |
+| ---------------------------- | ----------------------------------------------------- |
 | **Performance Optimization** | Discovers hardware-specific optimizations humans miss |
-| **Algorithm Discovery** | Finds novel approaches to classic problems |
-| **Scientific Computing** | Automates tedious manual tuning processes |
-| **Competitive Programming** | Generates multiple solution strategies |
-| **Multi-Objective Problems** | Pareto-optimal solutions across dimensions |
+| **Algorithm Discovery**      | Finds novel approaches to classic problems            |
+| **Scientific Computing**     | Automates tedious manual tuning processes             |
+| **Competitive Programming**  | Generates multiple solution strategies                |
+| **Multi-Objective Problems** | Pareto-optimal solutions across dimensions            |
 
 ## 🛠 Installation & Setup
 
 ### Requirements
-- **Python**: 3.10+ 
+
+- **Python**: 3.10+
 - **LLM Access**: Any OpenAI-compatible API
 - **Optional**: Docker for containerized runs
 
@@ -285,6 +291,7 @@ docker run --rm -v $(pwd):/app ghcr.io/codelion/openevolve:latest \
 - **OptiLLM**: Use cheaper models with test-time compute for better results
 
 **Cost-saving tips:**
+
 - Start with fewer iterations (100-200)
 - Use o3-mini, Gemini-2.5-Flash or local models for exploration
 - Use cascade evaluation to filter bad programs early
@@ -362,13 +369,13 @@ llm:
 
 ### **Showcase Projects**
 
-| Project | Domain | Achievement | Demo |
-|---------|--------|-------------|------|
-| [**Function Minimization**](examples/function_minimization/) | Optimization | Random → Simulated Annealing | [View Results](examples/function_minimization/openevolve_output/) |
-| [**MLX GPU Kernels**](examples/mlx_metal_kernel_opt/) | Hardware | Apple Silicon optimization | [Benchmarks](examples/mlx_metal_kernel_opt/README.md) |
-| [**Rust Adaptive Sort**](examples/rust_adaptive_sort/) | Algorithms | Data-aware sorting | [Code Evolution](examples/rust_adaptive_sort/) |
-| [**Symbolic Regression**](examples/symbolic_regression/) | Science | Automated equation discovery | [LLM-SRBench](examples/symbolic_regression/) |
-| [**Web Scraper + OptiLLM**](examples/web_scraper_optillm/) | AI Integration | Test-time compute optimization | [Smart Scraping](examples/web_scraper_optillm/) |
+| Project                                                      | Domain         | Achievement                    | Demo                                                              |
+| ------------------------------------------------------------ | -------------- | ------------------------------ | ----------------------------------------------------------------- |
+| [**Function Minimization**](examples/function_minimization/) | Optimization   | Random → Simulated Annealing   | [View Results](examples/function_minimization/openevolve_output/) |
+| [**MLX GPU Kernels**](examples/mlx_metal_kernel_opt/)        | Hardware       | Apple Silicon optimization     | [Benchmarks](examples/mlx_metal_kernel_opt/README.md)             |
+| [**Rust Adaptive Sort**](examples/rust_adaptive_sort/)       | Algorithms     | Data-aware sorting             | [Code Evolution](examples/rust_adaptive_sort/)                    |
+| [**Symbolic Regression**](examples/symbolic_regression/)     | Science        | Automated equation discovery   | [LLM-SRBench](examples/symbolic_regression/)                      |
+| [**Web Scraper + OptiLLM**](examples/web_scraper_optillm/)   | AI Integration | Test-time compute optimization | [Smart Scraping](examples/web_scraper_optillm/)                   |
 
 </div>
 
@@ -579,6 +586,7 @@ Based on successful OpenEvolve implementations, system messages are best created
 ### Examples by Complexity
 
 #### **Simple: General Optimization**
+
 ```yaml
 prompt:
   system_message: |
@@ -588,6 +596,7 @@ prompt:
 ```
 
 #### **Intermediate: Domain-Specific Guidance**
+
 ```yaml
 prompt:
   system_message: |
@@ -604,6 +613,7 @@ prompt:
 ```
 
 #### ⚡ **Advanced: Hardware-Specific Optimization**
+
 ```yaml
 prompt:
   system_message: |
@@ -645,18 +655,21 @@ prompt:
 **Structure Your Message:** Start with role definition → Define task/context → List optimization opportunities → Set constraints → Success criteria
 
 **Use Specific Examples:**
+
 ```yaml
 # Good: "Focus on reducing memory allocations. Example: Replace `new Vector()` with pre-allocated arrays."
 # Avoid: "Make the code faster"
 ```
 
 **Include Domain Knowledge:**
+
 ```yaml
 # Good: "For GPU kernels: 1) Memory coalescing 2) Occupancy 3) Shared memory usage"
 # Avoid: "Optimize the algorithm"
 ```
 
 **Set Clear Boundaries:**
+
 ```yaml
 system_message: |
   MUST NOT CHANGE: ❌ Function signatures ❌ Algorithm correctness ❌ External API
@@ -775,13 +788,13 @@ See the [Cost Estimation](#cost-estimation) section in Installation & Setup for 
 <details>
 <summary><b>🆚 How does this compare to manual optimization?</b></summary>
 
-| Aspect | Manual | OpenEvolve |
-|--------|--------|------------|
-| **Initial Learning** | Weeks to understand domain | Minutes to start |
-| **Solution Quality** | Depends on expertise | Consistently explores novel approaches |
-| **Time Investment** | Days-weeks per optimization | Hours for complete evolution |
-| **Reproducibility** | Hard to replicate exact process | Perfect reproduction with seeds |
-| **Scaling** | Doesn't scale beyond human capacity | Parallel evolution across islands |
+| Aspect               | Manual                              | OpenEvolve                             |
+| -------------------- | ----------------------------------- | -------------------------------------- |
+| **Initial Learning** | Weeks to understand domain          | Minutes to start                       |
+| **Solution Quality** | Depends on expertise                | Consistently explores novel approaches |
+| **Time Investment**  | Days-weeks per optimization         | Hours for complete evolution           |
+| **Reproducibility**  | Hard to replicate exact process     | Perfect reproduction with seeds        |
+| **Scaling**          | Doesn't scale beyond human capacity | Parallel evolution across islands      |
 
 **OpenEvolve shines** when you need to explore large solution spaces or optimize for multiple objectives simultaneously.
 
@@ -812,6 +825,7 @@ Just set the `api_base` in your config to point to your endpoint.
 - **Template stochasticity**: Randomized prompts break patterns
 
 **Manual interventions:**
+
 - Increase `num_diverse_programs` for more exploration
 - Add custom feature dimensions to diversify search
 - Use template variations to randomize prompts
@@ -858,6 +872,7 @@ We welcome contributions! Here's how to get started:
 ### **Academic & Research**
 
 **Articles & Blog Posts About OpenEvolve**:
+
 - [Towards Open Evolutionary Agents](https://huggingface.co/blog/driaforall/towards-open-evolutionary-agents) - Evolution of coding agents and the open-source movement
 - [OpenEvolve: GPU Kernel Discovery](https://huggingface.co/blog/codelion/openevolve-gpu-kernel-discovery) - Automated discovery of optimized GPU kernels
 - [OpenEvolve: Evolutionary Coding with LLMs](https://huggingface.co/blog/codelion/openevolve) - Introduction to evolutionary algorithm discovery using large language models
@@ -875,6 +890,7 @@ If you use OpenEvolve in your research, please cite:
   url = {https://github.com/codelion/openevolve}
 }
 ```
+
 ---
 
 <div align="center">
